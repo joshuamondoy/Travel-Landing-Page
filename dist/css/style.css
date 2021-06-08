@@ -1,0 +1,607 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+* {
+  /* this is to reset all padding ang margin on browser */
+  padding: 0%;
+  margin: 0%;
+  /* box sizing will not allow the padding to add to total width */
+  box-sizing: border-box;
+  font-family: "Nunito", "calibri";
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  background-color: white;
+  color: white;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-size: 3rem;
+  color: white;
+}
+:root {
+  /* create a variable that can be called many times */
+  --primary-color: rgb(0, 202, 216);
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+}
+
+/* header */
+.main-header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: url("../images/0.jpeg") no-repeat center center/cover;
+}
+.main-header::after {
+  /* this will serve as a black cover before the background-image so text will be highlightened */
+  /* without content it won't work so we declare an empty content */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* z-index will tell what element will be at the top and what will be behind */
+  z-index: 1;
+}
+.header-top {
+  position: relative;
+  height: 90px;
+  z-index: 2;
+}
+.header-top .logo {
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  position: relative;
+}
+.button a {
+  z-index: 2;
+  position: absolute;
+  top: -4rem;
+  right: 2rem;
+  text-decoration: none;
+  color: white;
+}
+.header-content {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+  z-index: 2;
+}
+.header-content h1 {
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 0 2rem;
+}
+.header-content p {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: white;
+}
+.header-content a {
+  margin-top: 2rem;
+  text-decoration: none;
+  color: white;
+}
+
+/* gallery */
+.gallery-section {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gallery-text h2 {
+  color: black;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 1rem;
+}
+.gallery-text h3 {
+  color: black;
+  line-height: 1rem;
+}
+.gallery-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "box1 box2"
+    "box3 box4"
+    "box5 box6"
+    "box5 box7"
+    "box8 box9";
+  margin: 1rem;
+}
+.gallery-container .card:first-child {
+  grid-area: box1;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(2) {
+  grid-area: box2;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(3) {
+  grid-area: box3;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(4) {
+  grid-area: box4;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(5) {
+  grid-area: box5;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(6) {
+  grid-area: box6;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(7) {
+  grid-area: box7;
+  padding: 0.5rem;
+}
+.gallery-container .card:nth-child(8) {
+  grid-area: box8;
+  padding: 0.5rem;
+}
+.gallery-container .card:last-child {
+  grid-area: box9;
+  padding: 0.5rem;
+}
+.gallery-container .card {
+  margin: 1rem;
+  box-shadow: 5px 10px 18px #888888;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+.image-container .text-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* opacity is zero so the text will just appear upon hover */
+  opacity: 0;
+  /* opon hover there will be a delay */
+  transition: all 0.3s ease-in-out;
+}
+.image-container .text-container:hover {
+  opacity: 100%;
+  color: white;
+}
+.image-container .text-container {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+/* about section */
+.about-section {
+  position: relative;
+  background: url("../images/10.jpg") no-repeat center center/cover;
+  height: 600px;
+}
+.about-section-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  max-width: 860px;
+  padding: 5rem 0;
+}
+.about-section-inner h3 {
+  font-size: 3rem;
+}
+.about-section-inner h5 {
+  font-size: 2rem;
+  line-height: 2rem;
+  color: white;
+}
+.about-section-inner p {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  color: white;
+}
+/* news-letter section */
+.news-letter {
+  width: 100%;
+  height: 400px;
+  background: rgb(32, 32, 32);
+}
+.news-letter-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+.news-letter-inner h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+.news-letter-inner h5 {
+  color: white;
+  font-size: 0.8rem;
+}
+.email-form {
+  display: inline-block;
+  background: #555;
+  border-radius: 20px;
+  line-height: 0;
+  margin-top: 1rem;
+  /* this relative will makes the arrow right icon move on our desired postion */
+  position: relative;
+}
+.email-form .form-control {
+  display: inline-block;
+  border: 0;
+  outline: 0;
+  font-size: 1rem;
+  color: #ddd;
+  background-color: transparent;
+  font-size: inherit;
+  margin: 0;
+  padding: 0 3rem 0 1.3rem;
+  height: 45px;
+  border-radius: 20px;
+  width: 100%;
+}
+.email-form .submit {
+  display: inline-block;
+  /* absolute will enable the icon to move around inside it's parent container */
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: #eee;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  color: #333;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+}
+/* footer */
+.footer-column {
+  background: black;
+}
+.footer {
+  overflow: auto;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer img {
+  width: 50px;
+  padding-top: 1rem;
+}
+/* utilities */
+/* header */
+.btn-sign-in {
+  display: inline-block;
+  /* variable color declared above */
+  /* background: transparent; */
+  color: white;
+  padding: 0.4rem 1.2rem !important;
+  text-align: center;
+  border: 0.1rem solid rgb(13, 202, 240) !important;
+  border-radius: 0% !important;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.main-header a:hover {
+  color: white;
+}
+.btn-learn-more {
+  font-size: 1.9rem;
+  border: 0.1rem solid var(--primary-color);
+  background: transparent;
+  color: white;
+  padding: 1rem 2.1rem;
+  text-transform: uppercase;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
+.card-body .btn {
+  color: white !important;
+  background: rgb(13, 202, 240);
+}
+.card-body .btn:hover {
+  background: rgb(11, 179, 212);
+}
+/* about-us */
+/* this is for the black overlay */
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* media query */
+@media (max-width: 800px) {
+  .about-section-inner h3 {
+    font-size: 2.5rem;
+  }
+  .about-section-inner h5 {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    margin-top: 0;
+  }
+  .about-section-inner p {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .header-content h1 {
+    font-size: 4rem;
+  }
+  .gallery-section {
+    width: 100%;
+  }
+  .gallery-text h2 {
+    font-size: 3rem;
+  }
+  /* .gallery-text h2{
+        background: white;
+    } */
+  .gallery-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "box1"
+      "box2"
+      "box3"
+      "box4"
+      "box5"
+      "box6"
+      "box7"
+      "box8"
+      "box9";
+  }
+  .about-section-inner h3 {
+    font-size: 2rem;
+  }
+  .about-section-inner h5 {
+    font-size: 1rem;
+    line-height: 1em;
+    margin-top: 0;
+  }
+  .about-section-inner p {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 1rem;
+  }
+  .news-letter-inner h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
+}
+@media (max-width: 600px) and (orientation: portrait) {
+  .header-content h1 {
+    font-size: 3rem;
+  }
+  .header-content p {
+    font-size: 1.3rem;
+  }
+  .btn-learn-more {
+    font-size: 1.5rem;
+  }
+  .gallery-container {
+    margin: 0;
+  }
+  .image-container .text-container {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .about-section-inner h3 {
+    font-size: 2rem;
+  }
+  .footer p {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 500px) {
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .button a {
+    z-index: 2;
+    position: relative;
+    top: -1rem;
+    right: 0.1rem;
+  }
+  .btn-sign-in {
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+  }
+  .header-content h1 {
+    font-size: 2.5rem;
+  }
+  .btn-learn-more {
+    font-size: 1rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .gallery-text h2 {
+    font-size: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  .gallery-text h3 {
+    font-size: 1rem;
+  }
+  .about-section-inner h3 {
+    font-size: 2rem;
+  }
+  .news-letter-inner {
+    text-align: center;
+  }
+  .email-form {
+    width: 80%;
+  }
+}
+@media (max-width: 400px), (orientation: portrait) {
+  .header-content {
+    margin-top: 3rem;
+  }
+  .header-content .btn-learn-more {
+    padding: 1rem 1.5rem;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gallery-text h3 {
+    font-size: 1rem;
+  }
+  .about-section-inner h3 {
+    font-size: 1.8rem;
+    line-height: 1em;
+  }
+  .about-section-inner p {
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 1rem;
+  }
+  .news-letter-inner h2 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 300px), (orientation: portrait) {
+  .gallery-text h3 {
+    font-size: 0.8rem;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .header-content {
+    margin-top: 1.5rem;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .btn-learn-more {
+    font-size: 1rem;
+  }
+  .gallery-text h3 {
+    font-size: 1rem;
+  }
+}
+@media (max-height: 400px) and (orientation: landscape) {
+  .main-header a {
+    font-size: 0.8rem;
+  }
+  .header-content {
+    margin-top: 1.5rem;
+  }
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .btn-learn-more {
+    font-size: 1rem;
+  }
+  .gallery-text h2 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-height: 350px) and (orientation: landscape) {
+  .header-content {
+    margin-top: 1rem;
+  }
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .btn-learn-more {
+    font-size: 0.8rem;
+  }
+}
+@media (max-height: 300px) and (orientation: landscape) {
+  .header-content {
+    margin-top: 0.8rem;
+  }
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .header-content p {
+    font-size: 1rem;
+  }
+  .btn-learn-more {
+    margin-top: 0rem;
+  }
+}
+@media (max-height: 270px) and (orientation: landscape) {
+  .header-content {
+    margin-top: 0;
+  }
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .header-content p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+  .btn-learn-more {
+    margin-top: 0;
+  }
+}

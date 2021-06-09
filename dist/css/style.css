@@ -26,6 +26,27 @@ h4 {
   /* create a variable that can be called many times */
   --primary-color: rgb(0, 202, 216);
 }
+.typing {
+  position: relative;
+}
+.typing:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  border-right: 2px solid white;
+  right: -5px;
+  animation: blink 0.5s infinite ease;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 ul {
   list-style: none;
 }
@@ -126,7 +147,6 @@ img {
 }
 .gallery-text h3 {
   color: black;
-  line-height: 1rem;
 }
 .gallery-container {
   display: grid;

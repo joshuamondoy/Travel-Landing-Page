@@ -58,7 +58,9 @@ img {
 .main-header {
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: -1; /*this will make the picture below the gallery container upon scroll*/
   background: url("../images/0.jpeg") no-repeat center center/cover;
 }
 .main-header::after {
@@ -133,6 +135,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100vh;
 }
 .gallery-text h2 {
   color: black;
